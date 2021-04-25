@@ -3,6 +3,7 @@ package br.com.bytebank.modelo
 class Cliente(
     var nome: String,
     val cpf: String,
+    var endereco: Endereco = Endereco(),
     private val senha: Int
 ) : Autenticavel {
 
@@ -11,7 +12,7 @@ class Cliente(
     }
 
     override fun toString(): String {
-        return "Cliente(nome='$nome', cpf='$cpf', senha=$senha)"
+        return "Cliente(nome='$nome', cpf='$cpf', endereco=$endereco, senha=$senha)"
     }
 
 }

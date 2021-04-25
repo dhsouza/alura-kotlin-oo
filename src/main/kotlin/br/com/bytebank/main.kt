@@ -6,8 +6,5 @@ import teste.testaFuncionarios
 
 fun main() {
     testaAutenticacao()
-    testaComportamentosConta()
     testaContasDiferentes()
-    testaCondicoes(200.00)
-    testaFuncionarios()
 }
