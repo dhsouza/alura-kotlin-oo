@@ -1,7 +1,7 @@
 package br.com.bytebank.modelo
 
 class ContaCorrente(
-    titular: String,
+    titular: Cliente,
     numeroConta: Int
 ) : Conta(
     titular = titular,
@@ -18,7 +18,7 @@ class ContaCorrente(
     }
 
     override fun toString(): String {
-        return "br.com.bytebank.modelo.ContaCorrente() ${super.toString()}"
+        return "ContaCorrente(${super.toString()})"
     }
 
 }

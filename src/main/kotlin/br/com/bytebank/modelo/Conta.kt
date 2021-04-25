@@ -1,12 +1,17 @@
 package br.com.bytebank.modelo
 
-abstract class Conta(var titular: String, val numeroConta: Int) {
+abstract class Conta(
+    var titular: Cliente,
+    val numeroConta: Int
+) {
     var saldo = 0.0
         protected set
 
     fun deposita(valor: Double) {
         println("Depositando na conta do $titular")
-        saldo += valor
+        if (valor > 0) {
+            this.saldo += valor
+        }
     }
 
     abstract fun saca(valor: Double)
@@ -22,6 +27,7 @@ abstract class Conta(var titular: String, val numeroConta: Int) {
     }
 
     override fun toString(): String {
-        return "br.com.bytebank.modelo.Conta(titular='$titular', numeroConta=$numeroConta, saldo=$saldo)"
+        return "Conta(titular=$titular, numeroConta=$numeroConta, saldo=$saldo)"
     }
+
 }

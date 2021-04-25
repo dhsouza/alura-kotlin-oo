@@ -1,16 +1,20 @@
 package br.com.bytebank.teste
 
+import br.com.bytebank.modelo.Cliente
 import br.com.bytebank.modelo.ContaCorrente
 import br.com.bytebank.modelo.ContaPoupanca
 
 fun testaContasDiferentes() {
+
+    val alex = Cliente(nome = "Alex", cpf = "", senha = 1)
     val contaCorrente = ContaCorrente(
-        titular = "Alex",
+        titular = alex,
         numeroConta = 1000
     )
 
+    val fran = Cliente(nome = "Fran", cpf = "", senha = 2)
     val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
+        titular = fran,
         numeroConta = 1001
     )
 
