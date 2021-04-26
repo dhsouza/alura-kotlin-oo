@@ -17,6 +17,8 @@ class ContaPoupanca(
     }
 
     override fun toString(): String {
-        return "br.com.bytebank.modelo.ContaPoupanca() ${super.toString()}"
+        return "ContaPoupanca(${super.toString()})"
     }
+
+
 }

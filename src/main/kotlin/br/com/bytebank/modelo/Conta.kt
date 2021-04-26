@@ -7,6 +7,17 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
+    companion object {
+        var totalContas = 0
+            private set
+    }
+
+    init {
+        println("Criando conta ${titular.nome}")
+        totalContas++
+        println("Total de contas criadas: $totalContas")
+    }
+
     fun deposita(valor: Double) {
         println("Depositando na conta do $titular")
         if (valor > 0) {
