@@ -1,10 +1,5 @@
-import br.com.bytebank.teste.testaAutenticacao
-import br.com.bytebank.teste.testaComportamentosConta
-import br.com.bytebank.teste.testaCondicoes
-import br.com.bytebank.teste.testaContasDiferentes
-import teste.testaFuncionarios
+import br.com.bytebank.teste.testaAutenticacaoTiposDiferentes
 
 fun main() {
-    testaAutenticacao()
-    testaContasDiferentes()
+    testaAutenticacaoTiposDiferentes()
 }
