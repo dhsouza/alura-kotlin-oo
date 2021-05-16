@@ -38,13 +38,13 @@ fun testaContasDiferentes() {
     println(contaCorrente)
     println(contaPoupanca)
 
-    contaCorrente.transfere(100.0, contaPoupanca)
+    contaCorrente.transfere(100.0, contaPoupanca, 1)
 
     println(contaCorrente)
     println(contaPoupanca)
 
 
-    contaPoupanca.transfere(50.0, contaCorrente)
+    contaPoupanca.transfere(50.0, contaCorrente, 2)
 
     println(contaCorrente)
     println(contaPoupanca)
