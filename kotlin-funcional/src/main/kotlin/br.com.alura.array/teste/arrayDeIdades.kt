@@ -1,6 +1,6 @@
-package br.com.alura.array
+package br.com.alura.array.teste
 
-fun main() {
+fun testeArrayDeIdades() {
     val idades = intArrayOf(25, 19, 33, 20, 55, 40)
 
     var maiorIdade = 0
