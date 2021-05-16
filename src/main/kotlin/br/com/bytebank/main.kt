@@ -1,12 +1,14 @@
 import br.com.bytebank.exceptions.SaldoInsuficienteException
 import br.com.bytebank.modelo.Endereco
+import br.com.bytebank.teste.testaComportamentosConta
 import java.lang.ClassCastException
 import java.lang.Exception
 
 fun main() {
-    println("início main")
+    /*println("início main")
     funcao1()
-    println("fim main")
+    println("fim main")*/
+    testaComportamentosConta()
 }
 
 fun funcao1() {

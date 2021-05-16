@@ -1,5 +1,6 @@
 package br.com.bytebank.teste
 
+import br.com.bytebank.exceptions.SaldoInsuficienteException
 import br.com.bytebank.modelo.Cliente
 import br.com.bytebank.modelo.ContaCorrente
 import br.com.bytebank.modelo.ContaPoupanca
@@ -20,6 +21,13 @@ fun testaComportamentosConta() {
     contaFran.saca(200.0)
 
     contaAlex.transfere(50.0, contaFran)
+
+    try {
+        contaFran.transfere(destino = contaAlex, valor = 10000.0)
+    } catch (ex: SaldoInsuficienteException) {
+        println("Saldo insuficiente")
+        ex.printStackTrace()
+    }
 
     println(contaAlex)
     println(contaFran)
