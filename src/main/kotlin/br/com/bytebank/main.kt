@@ -1,5 +1,6 @@
 import br.com.bytebank.modelo.Endereco
 import br.com.bytebank.teste.testaAny
+import java.lang.ClassCastException
 
 fun main() {
     println("início main")
@@ -15,10 +16,15 @@ fun funcao1(){
 
 fun funcao2() {
     println("início funcao2")
-    for (i in 1..5){
-        println(i)
-        val endereco = Any()
-        endereco as Endereco
+    try {
+        for (i in 1..5){
+            println(i)
+            val endereco = Any()
+            endereco as Endereco
+        }
+    } catch (ex: ClassCastException) {
+        println("ClassCastException thrown")
     }
+
     println("fim funcao2")
 }
