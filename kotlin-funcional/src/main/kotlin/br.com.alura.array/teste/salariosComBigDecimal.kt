@@ -17,8 +17,14 @@ fun main() {
     println(salariosComAumento.contentToString())
 
     val gastoIncial = salariosComAumento.somatoria()
-
     println(gastoIncial)
+
+    val meses = 6.toBigDecimal()
+    val gastoTotal = salariosComAumento.fold(gastoIncial) { acumulador, salario ->
+        acumulador + (salario * meses).setScale(2, RoundingMode.UP)
+    }
+
+    println(gastoTotal)
 }
 
 private fun calculaAumentoRelativo(salario: BigDecimal, aumento: BigDecimal): BigDecimal {
