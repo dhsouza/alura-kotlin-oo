@@ -5,12 +5,11 @@ import java.lang.ClassCastException
 import java.lang.Exception
 
 fun main() {
+    val enderecoNulo: Endereco? = Endereco(complemento = "teste")
 
-    var enderecoNulo: Endereco? = null
-    var enderecoNaoNulo: Endereco = enderecoNulo!!
-
-    enderecoNaoNulo.complemento = ""
-
+    enderecoNulo?.let {
+        println(it.complemento)
+    }
 
 }
 
