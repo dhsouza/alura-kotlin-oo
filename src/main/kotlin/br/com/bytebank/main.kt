@@ -5,32 +5,12 @@ import java.lang.ClassCastException
 import java.lang.Exception
 
 fun main() {
-    /*println("início main")
-    funcao1()
-    println("fim main")*/
-    testaComportamentosConta()
+
+    var enderecoNulo: Endereco? = null
+    var enderecoNaoNulo: Endereco = enderecoNulo!!
+
+    enderecoNaoNulo.complemento = ""
+
+
 }
 
-fun funcao1() {
-    println("início funcao1")
-
-    try {
-        funcao2()
-    } catch (ex: SaldoInsuficienteException) {
-        ex.printStackTrace()
-        println("SaldoInsuficienteException thrown")
-    }
-
-    println("fim funcao1")
-}
-
-fun funcao2() {
-    println("início funcao2")
-
-    for (i in 1..5) {
-        println(i)
-        throw SaldoInsuficienteException()
-    }
-
-    println("fim funcao2")
-}
