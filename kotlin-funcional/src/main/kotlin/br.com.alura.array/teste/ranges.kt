@@ -41,5 +41,4 @@ fun main() {
     val alfabetoMinusculo = "a".."z"
     val letra = "m"
     println(letra in alfabetoMinusculo)
-
 }
