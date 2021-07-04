@@ -5,16 +5,8 @@ fun main() {
 
     val aumento = 1.1
 
-    var indice = 0
-    for (salario in salarios) {
-        salarios[indice] = salario * aumento
-        indice++
-    }
-
-    println(salarios.contentToString())
-
-    for (i in salarios.indices) {
-        salarios[i] = salarios[i] * aumento
+    for(indice in salarios.indices) {
+        salarios[indice] = salarios[indice] * aumento
     }
 
     println(salarios.contentToString())

@@ -1,9 +1,9 @@
-package br.com.alura.array.teste
+package br.com.alura.array
 
 import java.math.BigDecimal
 
 fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
-    return Array(valores.size) { i ->
+    return Array<BigDecimal>(valores.size) { i ->
         valores[i].toBigDecimal()
     }
 }
