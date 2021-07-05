@@ -1,26 +1,82 @@
 package br.com.alura
 
 fun main() {
-    val assistiramCursoAndroid: Set<String> = setOf("Alex", "Fran", "Gui", "Maria")
-    val assistiramCursoKotlin: Set<String> = setOf("Alex", "Paulo", "Maria")
-//    val assistiramAmbos: Set<String> = assistiramCursoAndroid + assistiramCursoKotlin
-    val assistiramAmbos = mutableSetOf<String>()
-    assistiramAmbos.addAll(assistiramCursoAndroid)
-    assistiramAmbos.addAll(assistiramCursoKotlin)
-    assistiramAmbos.add("Ana")
-    assistiramAmbos.add("Ana")
-    println(assistiramAmbos)
+    val pedidos = mutableMapOf<Int, Double>(
+        Pair(1, 20.0),
+        Pair(2, 34.0),
+        3 to 50.0,
+        4 to 100.0,
+        5 to 150.0,
+        6 to 80.0
+    )
 
-    println(assistiramCursoKotlin + assistiramCursoAndroid)
-    println(assistiramCursoKotlin union assistiramCursoAndroid)
+    val mensagem: Double = pedidos.getOrElse(0) {
+        0.0
+    }
+    
+    println(mensagem)
+    println(pedidos.getOrDefault(1, -1.0))
+    println(pedidos.getOrDefault(0, -1.0))
 
-    println(assistiramCursoAndroid - assistiramCursoKotlin)
-    println(assistiramCursoAndroid subtract assistiramCursoKotlin)
+    println(pedidos.keys)
 
-    println(assistiramCursoAndroid intersect assistiramCursoKotlin)
+    for (numero in pedidos.keys){
+        println("Pedido $numero")
+    }
 
-    val assistiramList = assistiramAmbos.toMutableList()
-    assistiramList.add("Alex")
-    println(assistiramList)
-    println(assistiramList.toSet())
+    println(pedidos.values)
+
+    for (valor in pedidos.values){
+        println("Valor do pedido: $valor")
+    }
+
+    val pedidosFiltrados = pedidos.filter { (numero, valor) ->
+        numero % 2 == 0 && valor > 70.0
+    }
+
+    println(pedidosFiltrados)
+
+    val pedidosAcima = pedidos.filterValues { valor ->
+        valor > 70.0
+    }
+    println(pedidosAcima)
+
+    val pedidosPares = pedidos.filterKeys { numero ->
+        numero % 2 == 0
+    }
+    println(pedidosPares)
+}
+
+fun testaMap(pedidos: MutableMap<Int, Double>) {
+    println(pedidos)
+
+    val pedido = pedidos[0]
+
+    println("pedido $pedido")
+
+    for (p in pedidos) {
+        println("numero do pedido: ${p.key}")
+        println("valor do pedido: ${p.value}")
+    }
+
+    pedidos[4] = 70.0
+    println(pedidos)
+
+    pedidos.put(5, 80.0)
+    println(pedidos)
+
+    pedidos[1] = 100.0
+    println(pedidos)
+
+    pedidos.putIfAbsent(6, 200.0)
+    println(pedidos)
+
+    pedidos.putIfAbsent(6, 300.0)
+    println(pedidos)
+
+    pedidos.remove(6)
+    println(pedidos)
+
+    pedidos.remove(3, 50.0)
+    println(pedidos)
 }
