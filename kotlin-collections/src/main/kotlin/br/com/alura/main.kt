@@ -6,14 +6,14 @@ fun main() {
         Pair(2, 34.0),
         3 to 50.0,
         4 to 100.0,
-        5 to 150.0,
+        5 to 100.0.0,
         6 to 80.0
     )
 
     val mensagem: Double = pedidos.getOrElse(0) {
         0.0
     }
-    
+
     println(mensagem)
     println(pedidos.getOrDefault(1, -1.0))
     println(pedidos.getOrDefault(0, -1.0))
@@ -45,6 +45,28 @@ fun main() {
         numero % 2 == 0
     }
     println(pedidosPares)
+
+    println(pedidos + mapOf(7 to 90.0, 8 to 20.0))
+    println(pedidos)
+
+    println(pedidos - listOf(6, 5))
+    println(pedidos)
+
+//    pedidos.putAll(listOf<Pair<Int,Double>>(7 to 90.0, 8 to 20.0, 8 to 30.0))
+    pedidos += listOf<Pair<Int,Double>>(7 to 90.0, 8 to 20.0, 8 to 30.0)
+    println(pedidos)
+
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    pedidos.values.remove(50.0)
+    println(pedidos)
+
+    pedidos.values.remove(100.0)
+    println(pedidos)
+
+    pedidos -= 6
+    println(pedidos)
 }
 
 fun testaMap(pedidos: MutableMap<Int, Double>) {
