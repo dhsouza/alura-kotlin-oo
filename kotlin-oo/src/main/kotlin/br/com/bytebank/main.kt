@@ -4,15 +4,17 @@ fun main() {
     testaTipoFuncaoClasse()
     testaTipoFuncaoReferencia()
 
-    val minhaFuncaoLambda: () -> Unit = {
+    val minhaFuncaoLambda: (Int, Int) -> Int = { a, b ->
         println("Executa como lambda")
+        a + b
     }
-    println(minhaFuncaoLambda())
+    println(minhaFuncaoLambda(15, 10))
 
-    val minhaFuncaoAnonima: () -> Unit = fun() {
+    val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int {
         println("Executa como anonima")
+        return a + b
     }
-    println(minhaFuncaoAnonima())
+    println(minhaFuncaoAnonima(20, 10))
 }
 
 fun testaTipoFuncaoClasse() {
@@ -31,5 +33,4 @@ fun soma(a: Int, b: Int): Int {
 
 class Soma : (Int, Int) -> Int {
     override fun invoke(a: Int, b: Int): Int = a + b
-
 }
